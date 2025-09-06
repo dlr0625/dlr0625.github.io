@@ -23,22 +23,39 @@ h2 {
 }
 
 /* ===== Image Slider ===== */
-.slider {
-  width: 600px;          /* adjust to your preferred size */
+.carousel {
+  position: relative;
+  width: 80%;       /* adjust size */
+  max-width: 600px; /* keeps it tidy */
+  margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.slides {
+.carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.slides img {
-  width: 600px;          /* must equal .slider width */
+.carousel img {
+  width: 100%;
   height: auto;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
