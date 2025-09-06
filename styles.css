@@ -1,0 +1,8 @@
+.project-img {
+  max-width: 600px;   /* keeps it from being too wide */
+  width: 100%;        /* scales with your layout */
+  height: auto;       /* keeps proportions */
+  border-radius: 8px; /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+  margin: 15px 0;     /* spacing around image */
+}
