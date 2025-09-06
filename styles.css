@@ -21,3 +21,24 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin: 15px 0;
 }
+
+/* ===== Image Slider ===== */
+.slider {
+  width: 600px;          /* adjust to your preferred size */
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 600px;          /* must equal .slider width */
+  height: auto;
+  flex-shrink: 0;
+}
+
