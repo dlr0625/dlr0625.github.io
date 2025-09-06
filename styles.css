@@ -25,12 +25,14 @@ h2 {
 /* ===== Image Slider ===== */
 .carousel {
   position: relative;
-  width: 80%;       /* adjust size */
-  max-width: 600px; /* keeps it tidy */
+  width: 100%;          /* take full width of container */
+  max-width: 800px;     /* but not bigger than 800px */
+  aspect-ratio: 16 / 9; /* keeps correct proportions */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: #f9f9f9;
 }
 
 .carousel-track {
@@ -40,8 +42,9 @@ h2 {
 
 .carousel img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;  /* show full image, no cropping */
+  background: white;
   flex-shrink: 0;
 }
 
