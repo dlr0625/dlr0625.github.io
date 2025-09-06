@@ -1,8 +1,23 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background: #fdfdfd;
+  color: #333;
+}
+
+h2 {
+  margin-top: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
 .project-img {
   max-width: 600px;   /* keeps it from being too wide */
-  width: 100%;        /* scales with your layout */
-  height: auto;       /* keeps proportions */
-  border-radius: 8px; /* rounded corners */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
-  margin: 15px 0;     /* spacing around image */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 15px 0;
 }
