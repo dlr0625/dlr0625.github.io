@@ -37,51 +37,48 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== Navbar ===== */
+/* Navbar container */
 header {
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--card-bg);
-  z-index: 100;
+  background-color: #0077cc; /* blue background */
+  z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Navbar links container */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centers buttons horizontally */
   align-items: center;
-  gap: 1rem;   /* spacing between buttons */
-  padding: 1rem 0;
-  flex-wrap: wrap;  /* allows wrapping on small screens */
+  gap: 20px; /* space between buttons */
+  padding: 10px 0;
 }
 
 /* Navbar buttons */
 .nav-btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: var(--card-bg);
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  border-radius: 8px;
-  font-weight: bold;
+  color: white; /* white text */
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  background-color: transparent; /* initially transparent */
 }
 
 .nav-btn:hover {
-  background: var(--accent);
-  color: #fff;
-  transform: translateY(-2px);
+  background-color: #005fa3; /* slightly darker blue on hover */
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .navbar {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 10px;
   }
 }
+
 
 /* ===== Sections ===== */
 section {
