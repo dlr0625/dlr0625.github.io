@@ -7,7 +7,8 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   let currentIndex = 0;
 
   function updateCarousel() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    const slideWidth = carousel.offsetWidth; // dynamically get width
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   }
 
   nextButton.addEventListener('click', () => {
@@ -19,4 +20,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateCarousel();
   });
+
+  // Update when window is resized
+  window.addEventListener('resize', updateCarousel);
 });
