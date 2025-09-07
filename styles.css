@@ -101,15 +101,16 @@ section {
 }
 
 .carousel-slide {
-  min-width: 100%;   /* each slide fills carousel */
-  flex-shrink: 0;
+  min-width: 100%; /* ensures one slide per view */
+  box-sizing: border-box;
 }
 
 .carousel-slide img {
   width: 100%;
   height: auto;
-  display: block;
+  object-fit: contain;
 }
+
 
 .carousel-btn {
   position: absolute;
