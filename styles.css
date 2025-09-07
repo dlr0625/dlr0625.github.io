@@ -5,10 +5,6 @@
   --card-bg: #fff;    /* section/project background */
 }
 
-html {
-  scroll-padding-top: 60px; /* height of your navbar + a little spacing */
-}
-
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -54,28 +50,25 @@ header {
 /* Navbar links container */
 .navbar {
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center; /* centers buttons horizontally */
   align-items: center;
-  padding: 10px 0;
   gap: 20px; /* space between buttons */
-  margin: 0 auto; /* ensure centered in page */
-  max-width: 1000px; /* optional: limits width on large screens */
+  padding: 10px 0;
 }
 
 /* Navbar buttons */
 .nav-btn {
-  color: white;
+  color: white; /* white text */
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 20px;
-  border-radius: 20px; /* pill shape */
+  padding: 8px 16px;
+  border-radius: 6px;
   transition: background 0.3s ease;
-  background-color: #0077cc;
-  display: inline-block;
+  background-color: transparent; /* initially transparent */
 }
 
 .nav-btn:hover {
-  background-color: #005fa3; /* darker blue on hover */
+  background-color: #005fa3; /* slightly darker blue on hover */
 }
 
 /* Responsive adjustments */
@@ -85,7 +78,6 @@ header {
     gap: 10px;
   }
 }
-
 
 
 /* ===== Sections ===== */
@@ -139,43 +131,39 @@ section {
 }
 
 /* ===== Carousels ===== */
-/* Carousel wrapper */
 .carousel {
   position: relative;
   width: 100%;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 18px auto;
   overflow: hidden;
   border-radius: 10px;
-  background: #fff;
+  background: var(--card-bg);
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
-/* Track */
 .carousel-track {
   display: flex;
   transition: transform 0.45s ease-in-out;
-  width: 100%;
+  will-change: transform;
 }
 
-/* Each slide fills the carousel width */
 .carousel-slide {
-  min-width: 100%;      /* ensures only 1 slide is visible */
+  min-width: 100%;
   box-sizing: border-box;
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Images inside slides */
 .carousel-slide img {
-  width: 100%;          /* fit carousel width */
-  max-height: 400px;    /* optional, keep it proportional */
-  object-fit: contain;  /* prevents cropping */
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
   display: block;
 }
-
 
 /* Carousel Buttons */
 .carousel-btn {
