@@ -37,10 +37,11 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== Header & Navbar ===== */
+/* ===== Navbar ===== */
 header {
   position: sticky;
   top: 0;
+  width: 100%;
   background: var(--card-bg);
   z-index: 100;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -50,19 +51,36 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;   /* spacing between buttons */
   padding: 1rem 0;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  /* allows wrapping on small screens */
 }
 
-.navbar a {
-  font-size: 1rem;
-  padding: 0.3rem 0.5rem;
-  transition: color 0.3s;
+/* Navbar buttons */
+.nav-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--card-bg);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.navbar a:hover {
-  color: #005fa3;
+.nav-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }
 
 /* ===== Sections ===== */
