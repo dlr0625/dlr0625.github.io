@@ -91,7 +91,7 @@ section {
   max-width: 700px;
   margin: 18px auto;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
@@ -102,20 +102,20 @@ section {
 }
 
 .carousel-slide {
-  flex: 0 0 100%;   /* each slide takes up 100% of carousel width */
-  width: 100%;
-  box-sizing: border-box;
+  flex: 0 0 100%;   /* always 100% of carousel width */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carousel-slide img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;         /* image always fills carousel width */
+  height: 400px;        /* keep aspect ratio */
+  max-height: 400px;   /* limit very tall images */
+  object-fit: contain; /* no cropping */
   display: block;
 }
+
 
 /* Buttons */
 .carousel-btn {
