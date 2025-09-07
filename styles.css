@@ -87,7 +87,7 @@ section {
 /* Responsive carousel - paste into styles.css (replace earlier carousel CSS) */
 .carousel {
   width: 100%;
-  max-width: 900px;       /* adjust max size here */
+  max-width: 600px;       /* adjust max size here */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
