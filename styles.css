@@ -5,6 +5,10 @@
   --card-bg: #fff;    /* section/project background */
 }
 
+html {
+  scroll-padding-top: 60px; /* height of your navbar + a little spacing */
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -135,39 +139,43 @@ section {
 }
 
 /* ===== Carousels ===== */
+/* Carousel wrapper */
 .carousel {
   position: relative;
   width: 100%;
   max-width: 700px;
-  margin: 18px auto;
+  margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  background: var(--card-bg);
+  background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
+/* Track */
 .carousel-track {
   display: flex;
   transition: transform 0.45s ease-in-out;
-  will-change: transform;
+  width: 100%;
 }
 
+/* Each slide fills the carousel width */
 .carousel-slide {
-  min-width: 100%;
+  min-width: 100%;      /* ensures only 1 slide is visible */
   box-sizing: border-box;
   flex-shrink: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
+/* Images inside slides */
 .carousel-slide img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: contain;
+  width: 100%;          /* fit carousel width */
+  max-height: 400px;    /* optional, keep it proportional */
+  object-fit: contain;  /* prevents cropping */
   display: block;
 }
+
 
 /* Carousel Buttons */
 .carousel-btn {
