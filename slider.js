@@ -1,14 +1,13 @@
 document.querySelectorAll('.carousel').forEach(carousel => {
   const track = carousel.querySelector('.carousel-track');
-  const slides = Array.from(track.children);
+  const slides = Array.from(track.querySelectorAll('.carousel-slide')); 
   const prevButton = carousel.querySelector('.prev');
   const nextButton = carousel.querySelector('.next');
-
+  
   let currentIndex = 0;
 
   function updateCarousel() {
-    const slideWidth = carousel.offsetWidth;
-    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
   nextButton.addEventListener('click', () => {
@@ -20,7 +19,4 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     updateCarousel();
   });
-
-  window.addEventListener('resize', updateCarousel);
-  updateCarousel(); // run once at start
 });
