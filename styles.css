@@ -157,14 +157,3 @@ section {
   color: #444;
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
-
-.carousel-track img {
-  flex: 0 0 100%;   /* each image takes up 100% of carousel width */
-  width: 100%;
-  object-fit: contain; /* keeps full image visible */
-}
