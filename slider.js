@@ -46,6 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initAfterImagesLoaded();
 
+    function setSlideWidths() {
+      const w = carousel.getBoundingClientRect().width;
+      slideNodes.forEach(slide => {
+        slide.style.width = `${w}px`;
+      });
+    }
+
+
     // Button controls
     nextBtn && nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % slideNodes.length;
@@ -59,9 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Recompute on resize (no transition)
     let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => update(true), 150);
-    });
+   window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      setSlideWidths();
+      update(true);
+    }, 150);
+});
+
   });
 });
