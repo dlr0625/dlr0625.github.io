@@ -84,26 +84,26 @@ section {
   margin: 15px 0;
 }
 
-/* ------- Carousel core styles (paste into styles.css) ------- */
+/* Responsive carousel - paste into styles.css (replace earlier carousel CSS) */
 .carousel {
-  position: relative;
   width: 100%;
-  max-width: 800px;    /* change to 600/800 as you prefer */
+  max-width: 900px;       /* adjust max size here */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  /* You can use aspect-ratio: 16/9; if you want a fixed ratio container */
 }
 
-/* track is the flex-row that moves */
 .carousel-track {
   display: flex;
   transition: transform 0.45s ease-in-out;
   will-change: transform;
+  height: 100%;
 }
 
-/* each slide must fill the carousel width */
+/* each slide takes full visible carousel width */
 .carousel-slide {
   min-width: 100%;
   box-sizing: border-box;
@@ -111,17 +111,18 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
-/* images inside slides scale responsively and are not cropped */
+/* IMPORTANT: keep natural image ratio, no distortion, no cropping */
 .carousel-slide img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
   display: block;
-  object-fit: contain; /* no cropping */
+  object-fit: contain; /* ensure full image visible */
 }
-
-/* controls */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -134,15 +135,15 @@ section {
   z-index: 5;
   border-radius: 6px;
   font-size: 18px;
-  line-height: 1;
 }
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
 
-/* small-screen tweak */
-@media (max-width:420px) {
-  .carousel-btn { padding: 6px 9px; font-size: 16px; }
+/* small screen tweak */
+@media (max-width:420px){
+  .carousel-btn { padding:6px 9px; font-size:16px; }
 }
+
 
 
 
