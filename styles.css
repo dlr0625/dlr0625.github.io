@@ -50,25 +50,28 @@ header {
 /* Navbar links container */
 .navbar {
   display: flex;
-  justify-content: center; /* centers buttons horizontally */
+  justify-content: center; /* center horizontally */
   align-items: center;
-  gap: 20px; /* space between buttons */
   padding: 10px 0;
+  gap: 20px; /* space between buttons */
+  margin: 0 auto; /* ensure centered in page */
+  max-width: 1000px; /* optional: limits width on large screens */
 }
 
 /* Navbar buttons */
 .nav-btn {
-  color: white; /* white text */
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 8px 20px;
+  border-radius: 20px; /* pill shape */
   transition: background 0.3s ease;
-  background-color: transparent; /* initially transparent */
+  background-color: #0077cc;
+  display: inline-block;
 }
 
 .nav-btn:hover {
-  background-color: #005fa3; /* slightly darker blue on hover */
+  background-color: #005fa3; /* darker blue on hover */
 }
 
 /* Responsive adjustments */
@@ -78,6 +81,7 @@ header {
     gap: 10px;
   }
 }
+
 
 
 /* ===== Sections ===== */
