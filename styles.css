@@ -151,40 +151,41 @@ section {
   color: #444;
 }
 
-/* ===== Header / Navbar ===== */
+/* ===== Navbar ===== */
 header {
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.navbar ul {
-  list-style: none;
+.navbar {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 0;
   padding: 1rem 0;
 }
 
 .navbar a {
   text-decoration: none;
-  color: var(--accent);
-  font-weight: bold;
+  color: var(--accent); /* your blue accent */
+  font-weight: 600;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 0.2rem;
 }
 
 .navbar a:hover {
   color: #005fa3;
+  border-bottom: 2px solid #005fa3; /* underline effect */
 }
 
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
