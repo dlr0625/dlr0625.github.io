@@ -18,9 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const slideNodes = Array.from(track.querySelectorAll('.carousel-slide'));
     const prevBtn = carousel.querySelector('.carousel-btn.prev');
     const nextBtn = carousel.querySelector('.carousel-btn.next');
-
     let currentIndex = 0;
 
+    // Set slide widths to match carousel container
+    function setSlideWidths() {
+      const w = carousel.getBoundingClientRect().width;
+      slideNodes.forEach(slide => {
+        slide.style.width = `${w}px`;
+      });
+    }
+
+    // Move track to current slide
     function update(noTransition = false) {
       if (noTransition) track.style.transition = 'none';
       const w = carousel.getBoundingClientRect().width;
@@ -32,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Init after images load
+    // Initialize after all images load
     function initAfterImagesLoaded() {
       const imgs = track.querySelectorAll('img');
       const promises = Array.from(imgs).map(img => {
@@ -40,19 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise(resolve => img.addEventListener('load', resolve));
       });
       Promise.all(promises).then(() => {
-        update(true); // initial position, no transition
+        setSlideWidths(); // ✅ set widths properly
+        update(true);     // initial position without transition
       });
     }
 
     initAfterImagesLoaded();
-
-    function setSlideWidths() {
-      const w = carousel.getBoundingClientRect().width;
-      slideNodes.forEach(slide => {
-        slide.style.width = `${w}px`;
-      });
-    }
-
 
     // Button controls
     nextBtn && nextBtn.addEventListener('click', () => {
@@ -67,13 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Recompute on resize (no transition)
     let resizeTimer;
-   window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      setSlideWidths();
-      update(true);
-    }, 150);
-});
-
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setSlideWidths();
+        update(true);
+      }, 150);
+    });
   });
 });
