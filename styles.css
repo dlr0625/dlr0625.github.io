@@ -87,8 +87,8 @@ section {
 /* ===== Carousel ===== */
 .carousel {
   position: relative;
-  width: 100%;       /* responsive */
-  max-width: 600px;  /* cap it */
+  width: 100%;
+  max-width: 600px;
   overflow: hidden;
   margin: 20px auto;
   border-radius: 10px;
@@ -100,12 +100,16 @@ section {
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel-track img {
-  width: 100%;   /* take full carousel width */
+.carousel-slide {
+  min-width: 100%;   /* each slide fills carousel */
   flex-shrink: 0;
-  object-fit: contain;
 }
 
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 .carousel-btn {
   position: absolute;
@@ -117,16 +121,11 @@ section {
   padding: 10px;
   cursor: pointer;
   z-index: 2;
-  border-radius: 50%;
 }
 
-.carousel-btn.prev {
-  left: 10px;
-}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 
-.carousel-btn.next {
-  right: 10px;
-}
 
 /* ===== About Section ===== */
 .about {
