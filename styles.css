@@ -87,7 +87,8 @@ section {
 /* ===== Carousel ===== */
 .carousel {
   position: relative;
-  width: 600px;
+  width: 100%;       /* responsive */
+  max-width: 600px;  /* cap it */
   overflow: hidden;
   margin: 20px auto;
   border-radius: 10px;
@@ -100,10 +101,11 @@ section {
 }
 
 .carousel-track img {
-  width: 100%;
+  width: 100%;   /* take full carousel width */
   flex-shrink: 0;
   object-fit: contain;
 }
+
 
 .carousel-btn {
   position: absolute;
