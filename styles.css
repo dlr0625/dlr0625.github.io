@@ -84,9 +84,9 @@ section {
   margin: 15px 0;
 }
 
-/* ===== baseline carousel styles (paste into styles.css) ===== */
+/* ===== Carousel Styles ===== */
 .carousel {
-  position: relative;   /* KEY: lets buttons position inside the box */
+  position: relative;
   width: 100%;
   max-width: 700px;
   margin: 18px auto;
@@ -96,7 +96,6 @@ section {
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
-
 .carousel-track {
   display: flex;
   transition: transform 0.45s ease-in-out;
@@ -104,7 +103,7 @@ section {
 }
 
 .carousel-slide {
-  min-width: 100%;      /* THE KEY: each slide fills the visible area */
+  min-width: 100%;
   box-sizing: border-box;
   flex-shrink: 0;
   display: flex;
@@ -113,10 +112,10 @@ section {
 }
 
 .carousel-slide img {
-  width: 100%;          /* responsive width */
-  height: auto;         /* preserve aspect ratio */
-  max-height: 420px;    /* prevent huge images; tweak if needed */
-  object-fit: contain;  /* no cropping */
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
   display: block;
 }
 
@@ -137,15 +136,12 @@ section {
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
 
-/* small screens */
+/* Small screens */
 @media (max-width: 420px) {
   .carousel { max-width: 100%; }
   .carousel-slide img { max-height: 260px; }
   .carousel-btn { padding: 6px 8px; font-size: 16px; }
 }
-
-
-
 
 /* ===== About Section ===== */
 .about {
@@ -156,4 +152,3 @@ section {
   font-size: 1.1rem;
   color: #444;
 }
-
